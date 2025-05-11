@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>已猜数字展示</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="startButton" onclick="window.startAutoSubmit()">启动自动提交</button>
+    <button id="stopButton" onclick="window.stopAutoSubmit()">停止自动提交</button>
+    <button class="collapsible">查看已猜数字</button>
+    <div class="content">
+        <table id="guessedPinsTable">
+            <thead>
+                <tr>
+                    <th>已猜数字</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script>
+        // 从localStorage中加载已猜数字
+        let guessedPins = new Set(JSON.parse(localStorage.getItem('guessedPins') || '[]'));
+        // 页面加载时更新表格
+        guessedPins.forEach(pin => {
+            const tbody = document.getElementById('guessedPinsTable').getElementsByTagName('tbody')[0];
+            const row = document.createElement('tr');
+            const cell = document.createElement('td');
+            cell.textContent = pin;
+            row.appendChild(cell);
+            tbody.appendChild(row);
+        });
+
+        const collapsibles = document.getElementsByClassName("collapsible");
+        for (let i = 0; i < collapsibles.length; i++) {
+            collapsibles[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

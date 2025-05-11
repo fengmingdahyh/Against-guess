@@ -1,0 +1,18 @@
+// 部分代码展示修改处
+{
+    "manifest_version": 3,
+    "name": "Auto PIN Submitter",
+    "version": "1.0",
+    "description": "Automatically fills and submits 4-digit PIN",
+    "content_scripts": [{
+        "matches": ["https://www.guessthepin.com/*"],
+        "js": ["content.js"],
+        "css": ["styles.css"],
+        "run_at": "document_end"
+    }],
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    }
+}

@@ -1,0 +1,86 @@
+htmlcollapsible {\n  background-color: #f1f1f1;\n  color: #444;\n  cursor: pointer;\n  padding: 18px;\n  width: 100%;\n  border: none;\n  text-align: left;\n  outline: none;\n  font-size: 15px;\n}\n\n.active, .collapsible:hover {\n  background-color: #ccc;\n}\n\n.collapsible:after {\n  content: '\002B';\n  color: #777;\n  font-weight: bold;\n  float: right;\n  margin-left: 5px;\n}\n\n.active:after {\n  content: "\2212";\n}\n\n.content {\n  padding: 0 18px;\n  max-height: 0;\n  overflow: hidden;\n  transition: max-height 0.2s ease-out;\n  background-color: #f9f9f9;\n}
+
+#guessedPinsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#guessedPinsTable th,
+#guessedPinsTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#guessedPinsTable th {
+  background-color: #f2f2f2;
+}
+
+#guessedPinsTable tr:hover {
+  background-color: #f5f5f5;
+}
+
+
+#speedSlider {
+  -webkit-appearance: none;
+  width: 200px;
+  height: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+#speedSlider:hover {
+  opacity: 1;
+}
+
+#speedSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+#speedSlider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+#speedLabel {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+
+// ... existing code ...
+
+#startButton, #stopButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+#startButton:hover, #stopButton:hover {
+    background-color: #45a049;
+}
+
+#stopButton {
+    background-color: #f44336;
+}
+
+#stopButton:hover {
+    background-color: #da190b;
+}
